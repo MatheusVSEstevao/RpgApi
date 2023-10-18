@@ -90,7 +90,7 @@ public async Task<IActionResult> AtaqueComHabilidadeAsync(Disputa d)
         else
         {
             int dano = ph.Habilidade.Dano + (new Random().Next(atacante.Inteligencia));
-            dano = dano new Random().Next(oponente.Defesa);
+            dano = dano - new Random().Next(oponente.Defesa);
 
             if (dano > 0)
                 oponente.PontosVida = oponente.PontosVida - dano;
